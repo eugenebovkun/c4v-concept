@@ -5,17 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsDashboardComponent } from './maps-dashboard/maps-dashboard.component';
-import { MapsDashboardComponent } from './maps-dashboard/maps-dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DroneComponent } from './drone/drone.component';
+import { PointsComponent } from './points/points.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapsDashboardComponent,
-    MapsDashboardComponent,
-    DroneComponent
+    DroneComponent,
+    PointsComponent
   ],
   imports: [
     BrowserModule,
