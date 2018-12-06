@@ -9,13 +9,15 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
 import { LayoutModule } from '@angular/cdk/layout';
 import { DroneComponent } from './drone/drone.component';
 import { PointsComponent } from './points/points.component';
+import { WorldWindComponent } from './components/world-wind/world-wind.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapsDashboardComponent,
     DroneComponent,
-    PointsComponent
+    PointsComponent,
+    WorldWindComponent
   ],
   imports: [
     BrowserModule,
