@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DroneService} from '../drone.service';
 import {ActivatedRoute} from '@angular/router';
 
@@ -10,16 +10,21 @@ import {ActivatedRoute} from '@angular/router';
 export class DroneComponent implements OnInit {
 
   public drone;
+  @Input() data: any;
   private droneId: string;
   constructor(private droneService: DroneService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params
-      .subscribe((params) => {
-        this.droneId = params.id;
-        this.getDroneDetails();
-      });
+    if (!this.data) {
+      this.route.params
+        .subscribe((params) => {
+          this.droneId = params.id;
+          this.getDroneDetails();
+        });
+    } else {
+      this.droneId = this.data.droneId;
+    }
   }
 
   getDroneDetails() {

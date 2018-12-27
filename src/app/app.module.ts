@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsDashboardComponent } from './maps-dashboard/maps-dashboard.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import {MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatButtonToggleModule} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DroneComponent } from './drone/drone.component';
 import { PointsComponent } from './points/points.component';
 import { WorldWindComponent } from './components/world-wind/world-wind.component';
+import { WidgetDirective } from './components/widget.directive';
+import { WidgetWrapperComponent } from './components/widget-wrapper/widget-wrapper.component';
+import { WidgetPageComponent } from './widget-page/widget-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { WorldWindComponent } from './components/world-wind/world-wind.component
     MapsDashboardComponent,
     DroneComponent,
     PointsComponent,
-    WorldWindComponent
+    WorldWindComponent,
+    WidgetDirective,
+    WidgetWrapperComponent,
+    WidgetPageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,14 @@ import { WorldWindComponent } from './components/world-wind/world-wind.component
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatButtonToggleModule,
+    MatNativeDateModule,
     LayoutModule
+  ],
+  entryComponents: [
+    WorldWindComponent,
+    WidgetWrapperComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

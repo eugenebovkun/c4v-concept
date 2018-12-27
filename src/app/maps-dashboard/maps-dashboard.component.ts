@@ -5,6 +5,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {DatabaseService} from '../database.service';
 import {PointModel} from '../point.model';
 import {PointsService} from '../points.service';
+import {WidgetModel} from '../services/widget.model';
+import {WorldWindComponent} from '../components/world-wind/world-wind.component';
 
 @Component({
   selector: 'app-maps-dasboard',
@@ -14,6 +16,7 @@ import {PointsService} from '../points.service';
 export class MapsDashboardComponent implements OnInit {ng
   /** Based on the screen size, switch from standard to one column per row */
   points: PointModel[];
+  widget: WidgetModel;
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({matches}) => {
       if (matches) {
@@ -59,6 +62,8 @@ export class MapsDashboardComponent implements OnInit {ng
     this.pointsService.points.subscribe((points) => {
       this.points = points;
     });
+
+    this.widget = new WidgetModel(WorldWindComponent, {index: 10})
   }
 
   public createPoints() {
