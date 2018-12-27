@@ -1,0 +1,7 @@
+<h1>Here is some widgets</h1>
+
+<div *ngIf="page">
+  <div *ngFor="let widget of page.components">
+    <c4v-widget-wrapper [widget]="widget"></c4v-widget-wrapper>
+  </div>
+</div>
