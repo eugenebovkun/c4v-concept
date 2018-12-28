@@ -12,6 +12,7 @@ export class WidgetPageComponent implements OnInit {
 
   pageId: number;
   page: PageModel;
+
   constructor( private route: ActivatedRoute, private pageService: PagesDataService) { }
 
   ngOnInit() {

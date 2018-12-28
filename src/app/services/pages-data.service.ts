@@ -26,11 +26,25 @@ export class PagesDataService {
 
     const page1: PageModel = {
       id: 1,
-      components: [wWWidget1, wWWidget4, wWWidget2]
+      components: [wWWidget1, wWWidget2, wWWidget3, wWWidget4]
     };
 
     this.pages.push(page1);
     console.log('update pages', this.pages);
     this.pages$.next(this.pages);
+  }
+
+  closeWidget(widgetToDelete: WidgetModel) {
+    this.pages.forEach((page: PageModel) => {
+      const updatedComponents = page.components.filter((widget: WidgetModel) => widget !== widgetToDelete);
+      if (updatedComponents.length !== page.components.length) {
+        page.components = updatedComponents;
+      }
+    });
+    this.pages$.next(this.pages);
+  }
+
+  moveToAnotherScreen(widgetToMove: WidgetModel) {
+    alert('show modal to move to another screen');
   }
 }

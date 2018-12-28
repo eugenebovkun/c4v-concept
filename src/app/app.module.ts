@@ -13,6 +13,7 @@ import { WorldWindComponent } from './components/world-wind/world-wind.component
 import { WidgetDirective } from './components/widget.directive';
 import { WidgetWrapperComponent } from './components/widget-wrapper/widget-wrapper.component';
 import { WidgetPageComponent } from './widget-page/widget-page.component';
+import {ResizableModule} from 'angular-resizable-element';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,7 @@ import { WidgetPageComponent } from './widget-page/widget-page.component';
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatButtonToggleModule,
+    ResizableModule,
     MatNativeDateModule,
     LayoutModule
   ],
