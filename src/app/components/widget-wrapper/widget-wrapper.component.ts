@@ -1,9 +1,9 @@
-import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild} from '@angular/core';
-import {WidgetDirective} from '../widget.directive';
-import {ComponentModel} from '../../services/component.model';
-import {WidgetModel} from '../../services/widget.model';
-import {ResizableDirective, ResizeEvent} from 'angular-resizable-element';
-import {PagesDataService} from '../../services/pages-data.service';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild } from '@angular/core';
+import { WidgetDirective } from '../widget.directive';
+import { ComponentModel } from '../../services/component.model';
+import { WidgetModel } from '../../services/widget.model';
+import { ResizableDirective, ResizeEvent } from 'angular-resizable-element';
+import { PagesDataService } from '../../services/pages-data.service';
 
 @Component({
   selector: 'c4v-widget-wrapper',
@@ -15,7 +15,8 @@ export class WidgetWrapperComponent implements OnInit {
   @ViewChild(WidgetDirective) widgetHost: WidgetDirective;
   @ViewChild(ResizableDirective) resizableContainer: ResizableDirective;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, private widgetService: PagesDataService) { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private widgetService: PagesDataService) {
+  }
 
   ngOnInit() {
     this.loadComponent();
@@ -30,7 +31,7 @@ export class WidgetWrapperComponent implements OnInit {
     let componentRef = viewContainerRef.createComponent(componentFactory);
     // ToDo refactor model
 
-    ((<ComponentModel>componentRef.instance) as any ).index = this.widget.data.index;
+    ((<ComponentModel>componentRef.instance) as any).index = this.widget.data.index;
   }
 
   onResizeEnd(event: ResizeEvent): void {
