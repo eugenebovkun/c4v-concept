@@ -2,8 +2,6 @@
   <h1 class="mat-h1">Dashboard</h1>
   <button mat-flat-button color="primary" (click)="createPoints()"> Add new Point</button>
   <button mat-flat-button color="primary" (click)="updateBackend()"> Publish points update</button>
-
-  <app-points [points]="points"></app-points>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async; let i = index" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
@@ -26,4 +24,5 @@
   </mat-grid-list>
 
   <c4v-widget-wrapper [widget]="widget"></c4v-widget-wrapper>
+  <app-points [points]="points"></app-points>
 </div>

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 import * as WorldWind from '@nasaworldwind/worldwind';
 
@@ -9,7 +9,8 @@ import * as WorldWind from '@nasaworldwind/worldwind';
 })
 export class WorldWindComponent implements AfterViewInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   @Input('index') index: number;
   @ViewChild('scene') scene: ElementRef;
@@ -23,10 +24,10 @@ export class WorldWindComponent implements AfterViewInit {
     // reusable.
 
     let id;
-    if (this.index && this.index != 0) {
-      id = `scene${this.index}`
+    if (this.index || this.index === 0) {
+      id = `scene${this.index}`;
     } else {
-      id  = `scene`
+      id = `scene`;
     }
     const wwd = new WorldWind.WorldWindow(id);
 
