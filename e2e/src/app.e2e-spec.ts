@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to C4Vision!');
+    expect(page.getParagraphText()).toEqual('Welcome to c4v-basic-app!');
   });
 });
